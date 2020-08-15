@@ -1,3 +1,3 @@
 # TodoList
-
-Speedrun Todo List
+This is a todo list app.
+Very cool
