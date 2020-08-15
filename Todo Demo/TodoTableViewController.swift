@@ -10,10 +10,8 @@ import UIKit
 
 class TodoTableViewController: UITableViewController {
     
-    var todos = [
-        Todo(name: "Shave the cat"),
-        Todo(name: "Go see a doctor for deadly scratches")
-    ]
+    // change 1
+    var todos:[Todo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +21,17 @@ class TodoTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
+        if let loadedTodos = Todo.loadFromFiles() {
+            print("Found file! Loading friends!")
+            todos = loadedTodos // ha ha, loaded friends 💰🤑💰
+        } else {
+            print("No Todos 😢 Making some up")
+            todos = Todo.loadSampleData()
+        }
+
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
