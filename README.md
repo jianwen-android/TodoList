@@ -4,5 +4,4 @@ This is a todo list app, premade by our master YJ Soon.
 We have some changes to do together.
 Please do not be hard on us.
 Irman is currently being taught how to use GitHub.
-![as]
-(https://github.com/jianwen-android/TodoList/blob/master/peen.jpg)
+![as](peen.jpg)
