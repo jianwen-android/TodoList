@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Todo {
+class Todo: Codable {
     
     var name: String
     var done = false
@@ -21,13 +21,20 @@ class Todo {
         self.name = ""
     }
     
-    static func getArchivedURL() -> URL{
+    static func getArchivedURL() -> URL {
         
         let plistName = "Todos"
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         
         return documentsDirectory.appendingPathComponent(plistName).appendingPathExtension("plist")
 
+    }
+    
+    static func saveToFile(Todos: [Todo]) {
+        let archiveURL = getArchivedURL()
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedTodos = try? propertyListEncoder.encode(Todos)
+        try? encodedTodos?.write(to: archiveURL, options: .noFileProtection)
     }
     
 }
