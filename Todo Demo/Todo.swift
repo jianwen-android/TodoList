@@ -31,10 +31,19 @@ class Todo: Codable {
     }
     
     static func saveToFile(Todos: [Todo]) {
-        let archiveURL = getArchivedURL()
+        let archivedURL = getArchivedURL()
         let propertyListEncoder = PropertyListEncoder()
         let encodedTodos = try? propertyListEncoder.encode(Todos)
-        try? encodedTodos?.write(to: archiveURL, options: .noFileProtection)
+        try? encodedTodos?.write(to: archivedURL, options: .noFileProtection)
+    }
+    
+    static func loadFromFiles() -> [Todo]? {
+        let archivedURL = getArchivedURL()
+        let propertyListDecoder = PropertyListDecoder()
+        guard let retrievedTodoData = try? Data(contentsOf: archivedURL) else { return nil }
+        guard let decodedTodos = try? propertyListDecoder.decode(Array<Todo>.self, from: retrievedTodoData) else { return nil }
+        return decodedTodos
+
     }
     
 }
