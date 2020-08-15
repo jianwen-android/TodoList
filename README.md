@@ -4,3 +4,4 @@ This is a todo list app, premade by our master YJ Soon.
 We have some changes to do together.
 Please do not be hard on us.
 Irman is currently being taught how to use GitHub.
+(https://www.totstoteens.co.nz/wp-content/uploads/2018/08/drawing216.jpg)
