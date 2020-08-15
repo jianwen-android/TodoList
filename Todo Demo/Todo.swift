@@ -11,6 +11,7 @@ import Foundation
 class Todo: Codable {
     
     var name: String
+    
     var done = false
     
     init(name: String) {
