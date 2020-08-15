@@ -10,10 +10,8 @@ import UIKit
 
 class TodoTableViewController: UITableViewController {
     
-    var todos = [
-        Todo(name: "Shave the cat"),
-        Todo(name: "Go see a doctor for deadly scratches")
-    ]
+    // change 1
+    var todos:[Todo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
