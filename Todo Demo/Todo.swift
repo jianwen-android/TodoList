@@ -12,7 +12,7 @@ import Foundation
 
 class Todo {
     
-    var name: String
+    var name: String = "gay"
     var done = false
     
     init(name: String) {
