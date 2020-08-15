@@ -21,6 +21,13 @@ class Todo: Codable {
         self.name = ""
     }
     
+    static func loadSampleData() -> [Todo] {
+        
+        let todos:[Todo] = []
+        return todos
+
+    }
+    
     static func getArchivedURL() -> URL {
         
         let plistName = "Todos"
